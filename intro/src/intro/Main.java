@@ -9,8 +9,8 @@ public class Main {
 			String internetSubeButonu="Ýnternet Þubesine Gitmek Ýçin Týklayýnýz";  //camelcase(ilk kelimenin ilk harfi küçük geri kalanýnýn ilk harfi büyük)
 			double dolarDun = 8.50;
 			double dolarBugun = 8.50;
-			int vade = 180;
-			boolean dustuMu = true;
+			//int vade = 180;
+			//boolean dustuMu = true;
 			
 			System.out.println(internetSubeButonu);		
 			
@@ -76,7 +76,7 @@ public class Main {
 			
 			for(int i=0;i<krediler.length;i++) {
 				
-				System.out.println(krediler[i"]);
+				System.out.println(krediler[i]);
 				
 				
 				
