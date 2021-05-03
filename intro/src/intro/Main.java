@@ -6,7 +6,7 @@ public class Main {
 		
 				
 			
-			String internetSubeButonu="Ýnternet Þubesine Gitmek Ýçin Týklayýnýz";  //camelcase(ilk kelimenin ilk harfi küçük geri kalanýnýn ilk harfi büyük)
+			String internetSubeButonu="Ýnternet Þubesine Gitmek Ýçin Týklayýnýz";  //camel casing(ilk kelimenin ilk harfi küçük geri kalanýnýn ilk harfi büyük)
 			double dolarDun = 8.50;
 			double dolarBugun = 8.50;
 			//int vade = 180;
