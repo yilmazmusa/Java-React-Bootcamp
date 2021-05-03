@@ -4,11 +4,14 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		//reusability=bir þeyi bir defa yaz onu defa defa kullan,çaðýr
+		
+		//camel casing yani ilk harf küçük sonraki kelimenin ilk harfi büyük
 		
 		
-		int ogrenciSayisi=7;  //camel casing yani ilk harf küçük sonraki kelimenin ilk harfi büyük
-		
-		System.out.println("Öðrenci Sayi: " + ogrenciSayisi);
+		int ogrenciSayisi = 19;
+		String mesaj = "Öðrenci Sayisi: ";
+		System.out.println(mesaj + ogrenciSayisi);
 
 	}
 
