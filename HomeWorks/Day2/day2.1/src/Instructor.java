@@ -11,7 +11,7 @@ public class Instructor {
 	}
 	
 	public Instructor(int id, String name, String surName ) {
-		/*super();*/
+		
 		this.id=id;
 		this.name=name;
 		this.surName=surName;

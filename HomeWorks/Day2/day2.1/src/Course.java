@@ -8,7 +8,7 @@ public class Course {
 	double price;
 	
 	
-	
+	/*zczxc*/
 	public Course(int id,String name,String instructor,String detail,double price) {
 		
 		this.id=id;
