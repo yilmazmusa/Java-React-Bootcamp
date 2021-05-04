@@ -8,7 +8,7 @@ public class Main {
 		String yeniMesaj=sehirVer();
 		 System.out.println(yeniMesaj);
 		 
-		 int toplama=topla(515,9);
+		 int toplama=topla(5,9);
 		 System.out.println(toplama);
 	}
 	
