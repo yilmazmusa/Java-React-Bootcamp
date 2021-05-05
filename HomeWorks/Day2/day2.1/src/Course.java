@@ -8,7 +8,8 @@ public class Course {
 	double price;
 	
 	
-	/*zczxc*/
+	/* Contsructor týrlarýn özellikleri class ile ayný isimdediler ve return tipi yoktur(yani geriye deðer döndermezler)*/
+	
 	public Course(int id,String name,String instructor,String detail,double price) {
 		
 		this.id=id;

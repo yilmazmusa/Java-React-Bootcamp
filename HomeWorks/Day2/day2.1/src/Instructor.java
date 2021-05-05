@@ -10,6 +10,8 @@ public class Instructor {
 		
 	}
 	
+	/* Contsructor týrlarýn özellikleri class ile ayný isimdediler ve return tipi yoktur(yani geriye deðer döndermezler)*/
+	
 	public Instructor(int id, String name, String surName ) {
 		
 		this.id=id;
