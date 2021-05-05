@@ -5,7 +5,7 @@ public class Instructor {
 	String name;
 	String surName;
 	
-	public Instructor() {
+	public Instructor() { 
 		
 		
 	}
