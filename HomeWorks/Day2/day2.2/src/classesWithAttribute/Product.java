@@ -5,7 +5,7 @@ package classesWithAttribute;
 /* bir deðiþkeni private tanýmlarsak sadece tanýmlandýðý blokta geçerli olur */
 /* get() --> getter,bir deðeri getir anlamýnda,oku anlamýnda,bir deðeri okumaya yönelik iþlemdi.Gette parametre vermemixe gerek yoktur */
 /*set() --> setter,bir deðeri set et,yani kur anlamýnda,birþeyin deðerini vermeye yarar.Sette parametre vermemiz gerekir. */
-
+/*Overloadig(Aþýrý yükleme ) ayný isimli metod veya constructorlarýn ayný isimle farklý tip veya parametrelerle iþlem yapmasýdýr*/ 
 public class Product {
 
 		private int id;
@@ -14,6 +14,8 @@ public class Product {
 		private double price;
 		private int stockAmount;
 		private String kod;
+		
+		
 			
 		
 		public int getId() {
