@@ -2,7 +2,7 @@ package polymorphism;
 
 public class FileLogger extends BaseLoger {
 
-public void Logg(String message ) {
+public void logg(String message ) {
 		
 		System.out.println("Logged to file :" + message );
 		

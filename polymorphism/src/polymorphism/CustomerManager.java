@@ -12,10 +12,10 @@ public class CustomerManager {
 		
 		
 	}
-	public void Add() {
+	public void add() {
 		
 		System.out.println("Müþteri eklendi");
-		this.loger.Logg("log mesajý");
+		this.loger.logg("log mesajý");
 		
 		
 	}
