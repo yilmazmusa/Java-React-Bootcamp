@@ -10,19 +10,23 @@ public class Main {
 		/*LOGLAMA NEDÝR ? VERÝTANANINA LOGLAMA YAPILABÝLÝR,BÝR DOSYAYA YAPILABÝLÝR,E-MAÝL GÖNDERÝLEBÝLÝR KRÝTÝK DURUMLARDA */
 	
 		
-		EmailLogger logger=new EmailLogger();
-		logger.Logg("Logg mesajý ");
+		/*EmailLogger logger=new EmailLogger();
+		logger.Logg("Logg mesajý ");*/
 		
 		
-		BaseLoger[] loggers=new BaseLoger[] {new DatabaseLogger(), new FileLogger(), new EmailLogger()};
+		/*BaseLoger[] loggers=new BaseLoger[] {new DatabaseLogger(), new FileLogger(), new EmailLogger(),new ConsoleLogger()};
 		
 		for (BaseLoger loggerr : loggers) {
 			
-			loggerr.Logg("Log mesajý");
+			loggerr.Logg("Log mesajý");*/
+			
+			
+			CustomerManager customerManager = new CustomerManager(new FileLogger());
+			customerManager.Add();
 			
 			
 		}
 		
-	}
+	
 
 }
