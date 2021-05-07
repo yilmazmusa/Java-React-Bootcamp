@@ -5,7 +5,7 @@ package classesWithAttribute;
    o metotda ekle/sil/güncelle tarzında operasyonlar tutar) tutar. 
  
 /*aşağıdaki değişkenlere attribure veya field denir*/
-/*bir class sadece bir işi yapar,bir metot sadece bir işi yapar.*/
+/*bir class sadece bir işi yapar (yapmalı),bir metot sadece bir işi yapar(yapmalı).*/
 /* bir değişkeni private tanımlarsak sadece tanımlandığı blokta geçerli olur */
 /* get() --> getter,bir değeri getir anlamında,oku anlamında,bir değeri okumaya yönelik işlemdi.Gette parametre vermemixe gerek yoktur */
 /*set() --> setter,bir değeri set et,yani kur anlamında,birşeyin değerini vermeye yarar.Sette parametre vermemiz gerekir. */
