@@ -18,4 +18,12 @@ public class StudentManager {
 		
 	}
 	
+	public void toComment(Student student) {
+		
+		System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getToComment() + " yorumunu yaptı "  ); 
+			
+		
+		
+		}
+	
 }

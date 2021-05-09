@@ -7,7 +7,7 @@ public class Main {
 				"******", "142101", "Bilgisayar Mühendisliği","Süleyman Demirel Univercity","çok güzel kurs");
 		
 		Instructor instructor =new Instructor(1, "Engin", "Demirog", 35, "engindemirog@gmail.com", "******", 10000, 25);
-		
+ 		
 		
 	
 		
@@ -15,9 +15,10 @@ public class Main {
 		studentManager.add(student);
 		studentManager.update(student);
 		studentManager.delete(student);
+		studentManager.toComment(student);
 		
 		
-		System.err.println("        ----- --- ------      --------- -------");
+		System.err.println(" ----- --- --------------- -------");
 		
 		
 		InstructorManager ınstructorManager = new InstructorManager();

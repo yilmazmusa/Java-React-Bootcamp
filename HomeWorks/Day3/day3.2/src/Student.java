@@ -5,17 +5,18 @@ public class Student extends User{
 	private String studentNumber;
 	private String department;
 	private String university;
-	private String comment;
+	private String toComment;
+	
 	
 	
 	public Student(int id, String firstName, String lastName, int age,String email,
-			String password,String studentNumber,String department,String university,String comment) {
+			String password,String studentNumber,String department,String university,String toComment) {
 		
 		super(id, firstName, lastName, age, email, password);
 		this.studentNumber=studentNumber;
 		this.department=department;
 		this.university=university;
-		this.comment=comment;
+		this.toComment=toComment;
 	}
 	
 	
@@ -57,16 +58,21 @@ public class Student extends User{
 
 
 
-	public String getComment() {
-		return comment;
+	public String getToComment() {
+		return toComment;
 	}
 
 
 
 
-	public void setComment(String comment) {
-		this.comment = comment;
+	public void setToComment(String toComment) {
+		this.toComment = toComment;
 	}
+
+
+
+
+	
 	
 	
 
