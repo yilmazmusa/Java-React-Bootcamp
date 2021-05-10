@@ -1,5 +1,5 @@
 package Abstract;
 
-public class BaseCustomerManager {
+public interface BaseCustomerManager ip {
 
 }
