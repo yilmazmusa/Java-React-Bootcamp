@@ -1,8 +1,9 @@
 package Entities;
 
-import Abstract.Entities;
 
-public class Customer implements Entities{
+import Abstract.Entitiy;
+
+public class Customer implements Entitiy{
 	
 	private int id;
 	private String fistName;

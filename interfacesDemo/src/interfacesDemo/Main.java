@@ -15,6 +15,6 @@ public class Main {
 
 }
 
-//interfacelerde abstractlar gibi newlenemezzler.Ve imza taþýrlar.
+//interfacelerde abstractlar gibi newlenemezzler.Ve imza taþýrlar.Ve bu interfaceleri implements eden sýnýflar bu imzayý taþýmak zorundadýrlar ama isterlerse override edip üzerine biþey yazabilirler
 //Ýmplementasyonun extendsten farký birden class birden fazla interfaceyi implement edebilmesidir.
 //interfaceler onu implemente eden classýn referansýný tutabilir.Bu bir polimorfizimdir.Yukarda örneði var
