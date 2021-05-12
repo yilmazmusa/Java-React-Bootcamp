@@ -1,3 +1,5 @@
+package Adapters;
+
 import java.rmi.RemoteException;
 
 import Abstract.CustomerCheckService;

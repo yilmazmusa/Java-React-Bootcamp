@@ -2,7 +2,7 @@ import java.rmi.RemoteException;
 
 import Abstract.BaseCustomerManager;
 import Abstract.CustomerCheckService;
-
+import Adapters.MernisAdaptor;
 import Concrete.StarbucksCustomerManager;
 import Entities.Customer;
 
