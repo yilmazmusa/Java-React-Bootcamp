@@ -16,6 +16,7 @@ public class Main {
 		
 		customerManager.save(new Customer(1, "Musa","Yılmaz",1996,"12171049702") );
 		
+	
 	}
 
 }
