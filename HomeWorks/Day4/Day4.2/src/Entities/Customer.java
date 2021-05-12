@@ -8,7 +8,7 @@ public class Customer implements Entitiy{
 	private int id;
 	private String fistName;
 	private String lastName;
-	private String dateOfBirth;
+	private int dateOfBirth;
 	private String nationalityId;
 
 	
@@ -18,7 +18,7 @@ public class Customer implements Entitiy{
 	}
 
 
-	public Customer(int id, String fistName, String lastName, String dateOfBirth, String nationalityId) {
+	public Customer(int id, String fistName, String lastName, int dateOfBirth, String nationalityId) {
 		super();
 		this.id = id;
 		this.fistName = fistName;
@@ -58,12 +58,12 @@ public class Customer implements Entitiy{
 	}
 
 
-	public String getDateOfBirth() {
+	public int getDateOfBirth() {
 		return dateOfBirth;
 	}
 
 
-	public void setDateOfBirth(String dateOfBirth) {
+	public void setDateOfBirth(int dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 
