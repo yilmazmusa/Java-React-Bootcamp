@@ -6,6 +6,6 @@ import Entities.Customer;
 
 public interface CustomerService {
 
-	void save(Customer customer)throws NumberFormatException, RemoteException ;
+	void save(Customer customer)throws NumberFormatException, RemoteException;
 	
 }
