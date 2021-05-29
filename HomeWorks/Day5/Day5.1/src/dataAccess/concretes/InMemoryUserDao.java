@@ -15,7 +15,7 @@ public class InMemoryUserDao implements UserDao{
 		System.out.println("Kullanýcýlar");
 		
 		User user1 = new User(1,"Engin","Demirog","engindemirog@gmail.com","engin123");
-		User user2 = new User(2,"Musa","Yýlmaz","yilmazmusa@gmail.com","1223456");
+		User user2 = new User(2,"Musa","Yýlmaz","yilmazmusa@gmail.com","123456");
 		
 		users.add(user1);
 		users.add(user2);

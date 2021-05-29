@@ -9,7 +9,7 @@ import core.utilities.BusinessRules;
 public class AuthManager implements AuthService {
 	
 	public static final  Pattern validEmail = 
-		    Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+.(com|org|net|edu|gov|mil|biz|info|mobi)(.[A-Z]{2})?$", Pattern.CASE_INSENSITIVE);
+		    Pattern.compile("^[A-Z0-9._%+-]+@[gmail|hotmail|mail]+.(com|org|net|edu|gov|mil|biz|info|mobi)(.[A-Z]{2})?$", Pattern.CASE_INSENSITIVE);
 	
 
 	@Override

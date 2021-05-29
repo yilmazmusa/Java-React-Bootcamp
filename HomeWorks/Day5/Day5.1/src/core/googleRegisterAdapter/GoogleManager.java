@@ -44,7 +44,7 @@ public class GoogleManager implements AuthService{
 		}
 		
 		System.out.println(user.getFirstName() + " " + user.getLatsName() + " isimli kullanýcý Google hesabý ile kayýt oldu" );
-		return false;
+		return true;
 	}
 	
 }

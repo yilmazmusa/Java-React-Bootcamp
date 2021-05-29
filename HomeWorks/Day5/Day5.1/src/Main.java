@@ -23,24 +23,34 @@ public class Main {
 		user1.setId(1);
 		user1.setFirstName("Musa");
 		user1.setLatsName("Yýlmaz");
-		user1.setEmail("yilazmusa@gmail.com");
-		user1.setPassword("123456789");
+		user1.setEmail("");
+		user1.setPassword("");
 		
 		User user2=new User();
 		user2.setFirstName("Engin");
 		user2.setLatsName("Demirog");
 		user2.setEmail("engindemirog@gmail.com");
-		user2.setPassword("123456123");
+		user2.setPassword("engin123");
 		
 		UserService userService=new UserManager(new InMemoryUserDao(),new AuthManager(),new EmailManager());
 		
 		userService.getAll();
 		
 		
+			
+		/*userService.add(user1);
 		
+		int verificationCode=scan.nextInt();
+		userService.userVerify(user2, verificationCode);*/
 		
+		/*userService.getAll();
 		
-		google.login(user2);
+		userService.delete(user2);
+		userService.getAll();
+		
+		userService.get(2);*/
+		
+		google.login(user1);
 			
 			
 		

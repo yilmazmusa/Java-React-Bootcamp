@@ -11,7 +11,7 @@ import dataAccess.abstracts.UserDao;
 import entities.concretes.User;
 
 public class UserManager implements UserService {
-	
+		
 	private UserDao userDao;
 	private AuthService authService;
 	private EmailService emailService;
@@ -68,7 +68,6 @@ public class UserManager implements UserService {
 	@Override
 	public List<User> getAll() {
 		
-		System.out.println("Kullanýcýlar");
 		
 		List<User> result= this.userDao.getAll();
 		return result;
