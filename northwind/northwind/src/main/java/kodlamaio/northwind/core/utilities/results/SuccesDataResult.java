@@ -21,7 +21,7 @@ public class SuccesDataResult<T> extends DataResult<T>{
 	
 	public SuccesDataResult() { //sadece sonuc bilgisi dönderiyor
 		
-		super(null,true,null);
+		super(null,true);
 	}
 	
 	
