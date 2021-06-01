@@ -3,6 +3,7 @@ package kodlamaio.northwind.entities.concretes;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -18,7 +19,7 @@ import lombok.NoArgsConstructor;
 public class Product {
 		
 		@Id  							// İşlemlerini id ye göre yapacağı için sorgular bu id ye göre yapılandırılır
-		@GeneratedValue 				// idyi+1 şeklinde artır her seferinde 
+		@GeneratedValue(strategy = GenerationType.IDENTITY) // idyi+1 şeklinde artır her seferinde diyoruz
 		@Column(name="product_id") 		//  bu class veritabanında hangi kolona denk geliyo onu belirtiyoruz
 
 		private int id;

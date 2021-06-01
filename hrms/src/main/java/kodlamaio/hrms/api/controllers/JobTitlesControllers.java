@@ -14,7 +14,7 @@ import kodlamaio.hrms.business.abstracts.JobTitleService;
 import kodlamaio.hrms.core.utilities.results.DataResult;
 import kodlamaio.hrms.entities.concretes.JobTitle;
 
-@RestController
+@RestController  // ava olmayanlarda beni tanısın diyoruz
 @RequestMapping("/api/jobtitle/")
 public class JobTitlesControllers {
 	
