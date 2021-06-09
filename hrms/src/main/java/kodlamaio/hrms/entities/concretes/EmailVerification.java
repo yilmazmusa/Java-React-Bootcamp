@@ -33,10 +33,6 @@ public class EmailVerification {
 	@Column(name="user_Id")
 	private int userId;
 	
-	public boolean verified() {
-		
-		return this.isVerified;
-		
-	}
+	
 	
 }
