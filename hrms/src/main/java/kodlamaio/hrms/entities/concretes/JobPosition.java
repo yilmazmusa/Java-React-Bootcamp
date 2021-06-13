@@ -1,58 +1,56 @@
 package kodlamaio.hrms.entities.concretes;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
 @Data
+@Entity
+@Table(name="job_positions")
 @AllArgsConstructor
 @NoArgsConstructor
-@Inheritance(strategy = InheritanceType.JOINED)
-@Table(name="users")
-
-
-public class User {
-
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdverts"})
+public class JobPosition {
+	 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
-	private int id;
+	private int id; 
 	
-	@Column(name="email")
-	@Email
+	@Column(name="job_title")
+	@NotNull(message="JobTitle can not be null")
 	@NotBlank
-	@NotNull(message="Email can not be null")
-	private String email;
+	private String jobPosition;
 	
-	@Column(name="password")
-	@NotBlank
-	@NotNull(message="Password can not be null")
-	@Size(min=6,message = "Şifre en az 6 karakter olucak")
-	private String password;	
-
-	@Column(name= "created_at", columnDefinition = "Date default CURRENT_DATE")
-	private LocalDateTime createdAt = LocalDateTime.now();
+	@JsonIgnore
+	@Column(name= "created_at", columnDefinition = "Date default CURRENT_DATE")	
+	private LocalDateTime createdDate = LocalDateTime.now();
 	
 	@Column(name= "is_active", columnDefinition = "boolean default true")
 	private boolean isActive = true;
 	
 	@Column(name= "is_deleted", columnDefinition = "boolean default false")
 	private boolean isDeleted = false;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "jobPosition")
+	private List<JobAdvert> jobAdverts; 
+	
 	
 }

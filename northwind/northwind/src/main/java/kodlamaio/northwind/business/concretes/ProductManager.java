@@ -1,7 +1,7 @@
 package kodlamaio.northwind.business.concretes;
 
 
-import java.util.Arrays;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,14 +10,14 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import kodlamaio.northwind.business.abstracts.CategoryService;
+
 import kodlamaio.northwind.business.abstracts.ProductService;
 import kodlamaio.northwind.core.utilities.results.DataResult;
 import kodlamaio.northwind.core.utilities.results.Result;
 import kodlamaio.northwind.core.utilities.results.SuccesDataResult;
 import kodlamaio.northwind.core.utilities.results.SuccesResult;
 import kodlamaio.northwind.dataAcces.abstracts.ProductDao;
-import kodlamaio.northwind.entities.concretes.Category;
+
 import kodlamaio.northwind.entities.concretes.Product;
 
 @Service // bu class projede servis görevi görecek diye spring e bilgi veriyoruz

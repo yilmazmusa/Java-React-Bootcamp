@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kodlamaio.hrms.business.abstracts.EmployerService;
 import kodlamaio.hrms.business.abstracts.UserService;
-import kodlamaio.hrms.business.businessRules.Rules;
+import kodlamaio.hrms.business.businessRules.BusinessRules;
 import kodlamaio.hrms.business.constants.Messages;
 import kodlamaio.hrms.core.utilities.results.DataResult;
 import kodlamaio.hrms.core.utilities.results.ErrorResult;
@@ -20,105 +20,89 @@ import kodlamaio.hrms.entities.concretes.Employer;
 
 @Service
 public class EmployerManager implements EmployerService{
-
+	
 	private EmployerDao employerDao;
-	private UserService userService;
-
-	@Autowired
-	public EmployerManager(EmployerDao employerDao, UserService userService) {
-		
+	
+	public EmployerManager(EmployerDao employerDao) {
+		super();
 		this.employerDao = employerDao;
-		this.userService = userService;
 	}
 
+	
+
+	@Override
+	public DataResult<List<Employer>> getAll() {
+		
+		return new SuccessDataResult<List<Employer>>(this.employerDao.findAll(), "Data listelendi");
+	}
+	
+	
 	@Override
 	public Result add(Employer employer) {
 		
-		if (Rules.checkMail(employer.getEmail()) && Rules.checkCompanyName(employer.getCompanyName()) && Rules.checkPassword(employer.getPassword()) && Rules.checkPhone(employer.getPhone()) && Rules.checkWebSite(employer.getWebSite())) {
-			
-			if (userService.existsByeMail(employer.getEmail())!=true) {
-				
-				this.employerDao.save(employer);
-				return new SuccessResult (Messages.addedEmployer);
-			}else {
-				
-				return new ErrorResult(Messages.errorRegisteredMail);				
-			}			
+		Result result = BusinessRules.run(emailExist(employer.getEmail()),checkIfEqualEmailAndDomain(employer.getEmail(), employer.getWebSite()));
+
+		if (result.isSuccess()) {
+			employerDao.save(employer);
+			return new SuccessResult("Employer added");
 		}
-		else {
-			
-			if (Rules.checkMail(employer.getEmail())==false) {
-				
-				return new ErrorResult(Messages.errorMail);	
-			}
-			else if (Rules.checkCompanyName(employer.getCompanyName())==false) {
-				
-				return new ErrorResult(Messages.errorCompanyName);	
-			}
-			else if (Rules.checkWebSite(employer.getWebSite())==false) {
-				
-				return new ErrorResult(Messages.errorWebSite);	
-			}
-			else if (Rules.checkPassword(employer.getPassword())==false) {
-				
-				return new ErrorResult(Messages.errorPassword);	
-			}
-			else if (Rules.checkPhone(employer.getPhone())==false) {
-				
-				return new ErrorResult(Messages.errorPhone);	
-			}
-		}
-		return new ErrorResult(Messages.errorInformation);
-	}	
+		return result;
+	}
+	
 
 	@Override
-	public DataResult<List<Employer>> getAll() {		
-		return new SuccessDataResult<List<Employer>>(this.employerDao.findAll(), Messages.listedEmployers);
+	public Result update(Employer employer) {
+		
+		Result result = BusinessRules.run(emailExist(employer.getEmail()),checkIfEqualEmailAndDomain(employer.getEmail(), employer.getWebSite()));
+
+		if (result.isSuccess()) {
+			employerDao.save(employer);
+			return new SuccessResult("Employer update");
+		}
+		return result;
 	}
 
 	@Override
-	public Result updateEmployer(String mail, String password, String companyName, String webSite, String phone,
-			int id) {
-		if (Rules.checkMail(mail) && Rules.checkCompanyName(companyName) && Rules.checkPassword(password) && Rules.checkPhone(phone) && Rules.checkWebSite(webSite)) {
-			
-			if (userService.existsByeMail(mail)) {
-				
-				this.employerDao.updateEmployer(mail, password, companyName, webSite, phone, id);
-				return new SuccessResult(Messages.updatedEmployer);
-			}else {
-				
-				return new ErrorResult(Messages.errorRegisteredMail);				
-			}			
-		}
-		else {
-			
-			if (Rules.checkMail(mail)==false) {
-				
-				return new ErrorResult(Messages.errorMail);	
-			}
-			else if (Rules.checkCompanyName(companyName)==false) {
-				
-				return new ErrorResult(Messages.errorCompanyName);	
-			}
-			else if (Rules.checkWebSite(webSite)==false) {
-				
-				return new ErrorResult(Messages.errorWebSite);	
-			}
-			else if (Rules.checkPassword(password)==false) {
-				
-				return new ErrorResult(Messages.errorPassword);	
-			}
-			else if (Rules.checkPhone(phone)==false) {
-				
-				return new ErrorResult(Messages.errorPhone);	
-			}
-		}
-		return new ErrorResult(Messages.errorInformation);
-	}
-
-	@Override
-	public Result deleteEmployer(int id) {		
+	public Result delete(int id) {
 		this.employerDao.deleteById(id);
-		return new SuccessResult(Messages.updatedEmployer);		
+		return new SuccessResult("Employer deleted");
 	}
+
+	
+	
+	
+											//METOD KURALLARI  
+	
+
+		private Result emailExist(String email) {
+			if (employerDao.findAllByEmail(email).stream().count() != 0) {
+				return new ErrorResult("This Email is available");
+			}
+			return new SuccessResult();
+		}
+		
+		private Result checkIfEqualEmailAndDomain(String email, String website) {
+
+			String[] emailArr = email.split("@", 2); // @ gördüğünde böler 2 ayrı parçaya ve dizide tuttuk
+			String domain = website.substring(4, website.length()); // 4. karakterden başlayıp website uzunluğu kadar alır
+			// System.out.println(domain);
+			//www.kodlamaio.com - kullanıcıismi@kodlamaio.com
+			if (emailArr[1].equals(domain)) {
+				return new SuccessResult("Domain added");
+			}
+			return new ErrorResult("Domain is wrong");
+		}
+		
+		private Result  checkNationalityId(String nationalityId) {
+			
+			if (nationalityId.length()<11 || nationalityId.length()>11) {			
+				return new ErrorResult("Hatalı");
+			}else {
+				return new SuccessResult(" Başarılı");
+			}			
+		}
+
+		
+
+		
 }

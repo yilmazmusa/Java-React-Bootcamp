@@ -10,6 +10,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
@@ -26,17 +27,17 @@ public class Employer extends User {
 
 
 	@NotBlank
-	@NotNull
+	@NotNull(message="CompanyName can not be null")
 	@Column(name="company_name")
 	private String companyName;
 	
 	@NotBlank
-	@NotNull
+	@NotNull(message="WebAddress cannot be null")
 	@Column(name="web_address")
 	private String webSite;
 	
 	@NotBlank
-	@NotNull
+	@NotNull(message="Phone cannot be null")
 	@Column(name="phone")
 	private String phone;
 	
@@ -47,7 +48,10 @@ public class Employer extends User {
 	@Column(name="mng_is_verified",columnDefinition = "boolean default false")
 	private boolean MngIsVerified;
 	
-	@OneToMany(mappedBy = "employer", cascade = CascadeType.ALL)
-	private List<JobPosting> jobPostings;
+
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "employer")
+    private List<JobAdvert> jobAdvertisement;
 
 }
