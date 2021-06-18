@@ -47,31 +47,31 @@ public class JobSeeker extends User {
 	@Size(min = 11, max = 11, message = "NationalId must be 11 characters")
 	private String nationalId;
 
-	@JsonIgnore
+	//@JsonIgnore
 	@OneToMany(mappedBy = "jobSeeker")	
 	private List<LanguageForCv> languages;
 	
-	@JsonIgnore
+	//@JsonIgnore
 	@OneToOne(mappedBy = "jobSeeker")
 	private ImageForCv image;
 	
-	@JsonIgnore
+	//@JsonIgnore
 	@OneToMany(mappedBy="jobSeeker")	
 	private List<EducationForCv> educations;
 	
-	@JsonIgnore
+	//@JsonIgnore
 	@OneToMany(mappedBy="jobSeeker")	
 	private List<ExperienceForCv> experiences;
 	
-	@JsonIgnore
+	//@JsonIgnore
 	@OneToMany(mappedBy="jobSeeker")	
 	private List<SkillForCv> skills; 
 	
-	@JsonIgnore
+	//@JsonIgnore
 	@OneToMany(mappedBy="jobSeeker")
 	private List<CoverLetterForCv> coverLetters;
 	
-	@JsonIgnore
+	//@JsonIgnore
 	@OneToMany(mappedBy = "jobSeeker")	
 	private List<LinkForCv> links;
 	
